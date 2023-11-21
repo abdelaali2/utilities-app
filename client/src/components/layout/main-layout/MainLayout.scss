@@ -1,0 +1,11 @@
+#notificationStack {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 30%;
+  max-height: 50vh;
+  overflow-y: hidden;
+  margin: 0 auto;
+  flex-direction: column-reverse;
+}

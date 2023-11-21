@@ -1,0 +1,27 @@
+.container {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .arrContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .upArr {
+      animation: moveUpDown 3s ease-in-out infinite;
+      margin: 0 auto;
+    }
+  }
+}
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}

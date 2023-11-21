@@ -1,0 +1,14 @@
+.card {
+  margin: 10px;
+  border: 1px solid rgba(200, 200, 200, 0.384);
+  background-color: rgba(200, 200, 200, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  zoom: 1.2;
+
+  .deleteBtn {
+    cursor: pointer;
+    color: #ff0808;
+  }
+}

@@ -1,0 +1,32 @@
+.formClass {
+  width: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+
+  .inputsContainer {
+    width: 100%;
+
+    input {
+      display: block;
+      margin: 10px auto;
+      padding: 5px;
+      height: 25px;
+      width: 97%;
+      font-size: large;
+      border-radius: 25px;
+      text-align: center;
+    }
+  }
+
+  .submitBtn {
+    margin: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    flex-basis: 13%;
+  }
+}
