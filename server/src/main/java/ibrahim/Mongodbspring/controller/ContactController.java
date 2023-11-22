@@ -32,8 +32,8 @@ public class ContactController {
         }
     }
 
-    @GetMapping("")
-    public ResponseEntity<?> getContactById(@RequestParam(name = "id") String id) {
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getContactById(@PathVariable(name = "id") String id) {
         try {
             return new ResponseEntity<>(contactService.getContactById(id), HttpStatus.OK);
         } catch (Exception e) {
