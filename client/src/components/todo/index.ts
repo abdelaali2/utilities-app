@@ -1,3 +1,3 @@
-import Todo from "./Todo";
+import Todo, { TodoRoute } from "./Todo";
 
-export { Todo };
+export { Todo, TodoRoute };

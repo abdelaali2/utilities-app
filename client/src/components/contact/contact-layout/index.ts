@@ -1,3 +1,3 @@
-import ContactLayout from "./ContactLayout";
+import ContactLayout, { ContactRoute } from "./ContactLayout";
 
-export { ContactLayout };
+export { ContactLayout, ContactRoute };

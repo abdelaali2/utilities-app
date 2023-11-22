@@ -4,7 +4,7 @@ import { ModalContainer } from "./modal-container";
 import { Loading } from "./loading";
 import { Navbar } from "./navbar";
 import { MainLayout } from "./main-layout";
-import { Home } from "./home";
+import { Home, HomeIndexRoute, HomePathRoute } from "./home";
 import { NotificationComponent } from "./notification";
 import { ConfirmPopup } from "./confirm-popup";
 
@@ -18,4 +18,6 @@ export {
   MainLayout,
   Home,
   ConfirmPopup,
+  HomeIndexRoute,
+  HomePathRoute,
 };

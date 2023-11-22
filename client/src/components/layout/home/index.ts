@@ -1,3 +1,4 @@
-import Home from "./Home";
+import Home, { HomePathRoute } from "./Home";
+import { HomeIndexRoute } from "./Home";
 
-export { Home };
+export { Home, HomeIndexRoute, HomePathRoute };
