@@ -21,7 +21,7 @@ const MainLayout: React.FC = () => {
       ) : (
         <></>
       )}
-      <ConfirmPopup/>
+      <ConfirmPopup />
     </>
   );
 };

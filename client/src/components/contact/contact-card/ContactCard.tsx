@@ -19,9 +19,11 @@ import { IContact, IPopup } from "../../../utilities/Interfaces";
 
 // Styling
 import "./ContactCard.scss";
+import { useNavigate } from "react-router-dom";
 
 const ContactCard: React.FC<IContact> = ({ age, id, name }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleDelete = (id: string) => {
     axios
@@ -45,7 +47,8 @@ const ContactCard: React.FC<IContact> = ({ age, id, name }) => {
     dispatch(closePopup(0));
   };
 
-  const confirmHandler = () => {
+  const confirmHandler = (e: React.MouseEvent) => {
+    e.stopPropagation();
     const popupInfo: IPopup = {
       handler: () => handleDelete(id),
       message: "This contact will be deleted!",
@@ -54,12 +57,16 @@ const ContactCard: React.FC<IContact> = ({ age, id, name }) => {
     dispatch(openPopup(popupInfo));
   };
 
+  const navigateToContact = () => {
+    navigate(`${id}`);
+  };
+
   return (
     <Box
       component="span"
       sx={{ display: "inline-block", mx: "2px", transform: "scale(1)" }}
     >
-      <Card variant="outlined" className="card">
+      <Card variant="outlined" className="card" onClick={navigateToContact}>
         <CardContent>
           <Typography variant="h5" component="div">
             {name}

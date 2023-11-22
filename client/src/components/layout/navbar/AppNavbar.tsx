@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {
   CONTACT_PAGE,
   HOME_PAGE,
-  TODO_PAGE,
+  TODOS_PAGE,
 } from "../../../utilities/PagesIndex";
 
 import "./AppNavbar.scss";
@@ -26,7 +26,7 @@ const AppNavbar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0.1 }}>
-            <Link to={TODO_PAGE} className="NavLink">
+            <Link to={TODOS_PAGE} className="NavLink">
               <h3>Todo</h3>
             </Link>
           </Box>

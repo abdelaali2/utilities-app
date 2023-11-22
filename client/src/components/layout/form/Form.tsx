@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useRef, useState } from "react";
 import { ModalContainer } from "..";
 import { ADD_CONTACT_API } from "../../../utilities/APIs";
-import { IContact } from "../../../utilities/Interfaces";
+import { voidContact } from "../../../utilities/Interfaces";
 
 // styles
 import { Button } from "@mui/material";
@@ -14,8 +14,7 @@ import { createNotificationContent } from "../../../utilities/Helper";
 import "./Form.scss";
 
 const Form: React.FC = () => {
-  const voidContact: IContact = { name: "", id: "", age: 0 };
-  const [input, setInput] = useState<IContact>(voidContact);
+  const [input, setInput] = useState(voidContact);
   const dispatch = useDispatch();
   const ageRef = useRef<HTMLInputElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
