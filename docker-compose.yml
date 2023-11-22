@@ -1,0 +1,52 @@
+services:
+
+  server:
+    container_name: UtilitiesAppBE
+    build:
+      context: server/
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 2203:2203
+
+  client:
+    container_name: UtilitiesAppFE
+    build:
+      context: ./client/
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 4000:80
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    environment:
+        - MONGO_INITDB_ROOT_USERNAME=root
+        - MONGO_INITDB_ROOT_PASSWORD=root
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - /media/ibrahim/sda1/containers_data/database/db:/data/db
+      - /media/ibrahim/sda1/containers_data/database/dev.archive:/Databases/dev.archive
+      - /media/ibrahim/sda1/containers_data/database/production:/Databases/production
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=root
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=root
+      - ME_CONFIG_MONGODB_URL=mongodb://root:root@mongo:27017/?authSource=admin
+      - ME_CONFIG_BASICAUTH_USERNAME=mexpress
+      - ME_CONFIG_BASICAUTH_PASSWORD=mexpress
+    links:
+      - mongo
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+
+networks:
+  utilities-app-network:
+    driver: bridge
