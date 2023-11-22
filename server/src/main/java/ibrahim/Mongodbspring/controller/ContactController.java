@@ -40,7 +40,7 @@ public class ContactController {
     }
 
     @PostMapping("")
-    public ResponseEntity<?> addNewUser(@Valid @RequestBody ContactDto contact) {
+    public ResponseEntity<?> addNewContact(@Valid @RequestBody ContactDto contact) {
         try {
             contactService.addContact(contact);
             return ResponseEntity.status(HttpStatus.OK).body("Contact Added");
@@ -50,7 +50,7 @@ public class ContactController {
     }
 
     @DeleteMapping("")
-    public ResponseEntity<?> deleteUserById(@RequestParam(name = "id") String id) {
+    public ResponseEntity<?> deleteContactById(@RequestParam(name = "id") String id) {
         try {
             return new ResponseEntity<>(contactService.deleteContactById(id), HttpStatus.OK);
         } catch (Exception e) {
