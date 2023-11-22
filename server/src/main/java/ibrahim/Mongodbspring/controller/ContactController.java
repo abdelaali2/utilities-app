@@ -2,6 +2,7 @@ package ibrahim.Mongodbspring.controller;
 
 import ibrahim.Mongodbspring.dto.ContactDto;
 import ibrahim.Mongodbspring.service.ContactService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,8 @@ import javax.validation.Valid;
 import java.util.List;
 
 
+//Swagger Info
+@Tag(name = "Contacts", description = "Contact Controller API Endpoints")
 @RestController
 @RequestMapping(value = "/contact")
 @Slf4j
