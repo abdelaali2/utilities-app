@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Objects;
 
 
 //Swagger Info
@@ -46,6 +47,7 @@ public class ContactController {
     public ResponseEntity<?> addNewContact(@Valid @RequestBody ContactDto contact) {
         try {
             contactService.addContact(contact);
+            Objects.isNull(contact);
             return ResponseEntity.status(HttpStatus.OK).body("Contact Added");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
